@@ -1,0 +1,45 @@
+.home-container {
+  scroll-snap-type: y mandatory; /* opcionális, ha szeretnél "kényszerített scrollt" */
+  overflow-y: scroll;
+  height: 100vh;
+  color: black;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+.section-home {
+  background: white;
+}
+
+.start-image {
+  max-width: 100%;  /* nyugodtan állítható */
+  width: 50%;
+  height: auto;
+  cursor: pointer;
+}
+
+.section-description {
+  background: white; /* ide jöhet bármilyen háttér */
+  padding: 50px;
+}
+
+
+
+
+/*
+.home-wrapper {
+  background-color: #ffffff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+*/
+
