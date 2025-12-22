@@ -1,11 +1,27 @@
-import LandingPage from './pages/LandingPage';
 
+import LandingPage from './pages/LandingPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SLPage from './pages/SLPage.jsx'
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/card/:id" element={<SLPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+
+/*
 function App() {
   return <LandingPage />;
 }
 
 export default App
-
+*/
 /*
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
