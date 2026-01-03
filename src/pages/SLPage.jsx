@@ -11,16 +11,22 @@ export default function CardPage() {
   return (
     <Box sx={{ backgroundColor: '#000000', minHeight: '100vh', width: '100vw', m: 0, p: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
       <Container sx={{ width: 'min(900px, 100%)', mx: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', color: '#ffffff', py: 5 }}>
-        <Typography variant="h4" gutterBottom>
+
+        <Typography variant="h4" sx={{ mb: 4 }}>
           {slpage.title}
         </Typography>
 
-        <Typography variant="body1" paragraph sx={{ width: '100%', textAlign: 'justify' }}>
+        <Typography variant="body1" paragraph sx={{ width: '100%', textAlign: 'justify', mb: 6 }}>
           {slpage.text}
         </Typography>
 
+        <Typography variant="h5" sx={{ mb: 6 }}>
+          Még néhány érdekesség:
+
+        </Typography>
+
         <Box sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#000000' }}>
-          <SlCarousel images={slpage.carousimages} />
+          <SlCarousel images={slpage.carousimages} captions={slpage.caroustexts}/>
         </Box>
       </Container>
     </Box>
