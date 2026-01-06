@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Container, Typography, Box } from "@mui/material";
-import { slPagesData } from "../data/slpagesdata"
+import { slPagesData } from "../data/slpagesdata";
+import SlCarousel from '../components/SlCarousel';
 
 export default function CardPage() {
   const { id } = useParams();
@@ -8,22 +9,26 @@ export default function CardPage() {
    if (!slpage) return <Typography>Card not found</Typography>;
 
   return (
-    <Container sx={{ py: 5 }}>
-      <Typography variant="h4" gutterBottom>
-        {slpage.title}
-      </Typography>
+    <Box sx={{ backgroundColor: '#000000', minHeight: '100vh', width: '100vw', m: 0, p: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      <Container sx={{ width: 'min(900px, 100%)', mx: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', color: '#ffffff', py: 5 }}>
 
-      <Typography variant="body1" paragraph>
-        {slpage.text}
-      </Typography>
+        <Typography variant="h4" sx={{ mb: 4 }}>
+          {slpage.title}
+        </Typography>
 
-      <Box sx={{ mt: 3 }}>
-        <img
-          src={slpage.image}
-          alt={slpage.title}
-          style={{ width: "100%", borderRadius: "8px" }}
-        />
-      </Box>
-    </Container>
+        <Typography variant="body1" paragraph sx={{ width: '100%', textAlign: 'justify', mb: 6 }}>
+          {slpage.text}
+        </Typography>
+
+        <Typography variant="h5" sx={{ mb: 6 }}>
+          Még néhány érdekesség:
+
+        </Typography>
+
+        <Box sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#000000' }}>
+          <SlCarousel images={slpage.carousimages} captions={slpage.caroustexts}/>
+        </Box>
+      </Container>
+    </Box>
   );
 }

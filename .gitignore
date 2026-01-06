@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 node_modules
+/src/images/carouselimages/*
+/src/images/slimages/*
