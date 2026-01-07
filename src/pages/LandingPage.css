@@ -17,15 +17,10 @@
   /*cursor: pointer;*/
 }
 
-.section-description {
-  background: white; /* ide jöhet bármilyen háttér */
-  padding: 50px;
-}
-
 .home_button {
   color: white;
   background-color: rgba(167, 5, 50, .8);
-  margin-top: 60px;
+  margin-top: 70px;
   margin-left: 50px;
   padding: 10px;
   padding-right: 50px;
@@ -36,15 +31,6 @@
 .home_button:hover {
   color: white;
   background-color: rgba(167, 5, 50);
-}
-
-
-/*
-.home-wrapper {
-  background-color: #ffffff;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-color: rgba(167, 5, 50);
 }
 

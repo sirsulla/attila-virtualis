@@ -12,7 +12,6 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 
 import sl1 from '../images/slimages/sl1_Torzitottkoponya.png';
 import sl2 from '../images/slimages/sl2_Becsiszablyamasol-0.png';
@@ -22,16 +21,15 @@ import sl5 from '../images/slimages/sl5_PaczkaFerenc_Attilanasz1884.jpg';
 import sl6 from '../images/slimages/sl6_KohlmannLipot_Attilahunkiraly1836.jpg';
 
 export default function Tiles({ open, onClose}) {
-const navigate = useNavigate();
-const [activeTile, setActiveTile] = useState(null);
+  const navigate = useNavigate();
 
   const items = [
-    { id: 1, title: 'Attila világa – a Hun Birodalom és környezete', body: ' ', image: sl1 }, //  Attila világa – a Hun Birodalom és környezete
-    { id: 2, title: 'A hadisten kardja: a legenda és a tárgyak', body: ' ', image: sl2 }, //  A hadisten kardja: a legenda és a tárgyak
-    { id: 3, title: 'A hun király nyugati percepciója: Attila, az Isten ostora', body: ' ', image: sl3 }, //  A hun király nyugati percepciója: Attila, az Isten ostora
-    { id: 4, title: 'Attila lakomája', body: ' ', image: sl4 }, //  Attila lakomája
-    { id: 5, title: 'Attila halála', body: ' ', image: sl5 }, //  Attila halála
-    { id: 6, title: 'Attila mint a magyarok (h)őse', body: ' ', image: sl6 }, //  Attila mint a magyarok (h)őse
+    { id: 1, title: 'I. Attila világa – a Hun Birodalom és környezete', body: ' ', image: sl1 }, //  Attila világa – a Hun Birodalom és környezete
+    { id: 2, title: 'II.', body: ' ', image: sl2 }, //  A hadisten kardja: a legenda és a tárgyak
+    { id: 3, title: 'III.', body: ' ', image: sl3 }, //  A hun király nyugati percepciója: Attila, az Isten ostora
+    { id: 4, title: 'IV.', body: ' ', image: sl4 }, //  Attila lakomája
+    { id: 5, title: 'V.', body: ' ', image: sl5 }, //  Attila halála
+    { id: 6, title: 'VI.', body: ' ', image: sl6 }, //  Attila mint a magyarok (h)őse
   ];
 
   const goToPage = (id) => {
@@ -49,10 +47,10 @@ const [activeTile, setActiveTile] = useState(null);
       PaperProps={{
         sx: {
           height: '100%',
-          backgroundColor: 'rgba(255, 255, 255, 0.65)',
-          //backgroundColor: 'rgba(0,0,0,0.7)',
-          color: 'rgba(0, 0, 0, 1)',
-          //color: 'rgba(255, 255, 255, 1)',
+          //backgroundColor: 'rgba(255, 255, 255, 0.75)',
+          backgroundColor: 'rgba(0,0,0,0.7)',
+          //color: 'rgba(0, 0, 0, 1)',
+          color: 'rgba(255, 255, 255, 1)',
           backdropFilter: 'blur(6px)'
         }
       }}
@@ -64,107 +62,71 @@ const [activeTile, setActiveTile] = useState(null);
           position: 'absolute',
           top: 16,
           right: 16,
-          color: 'black',
+          color: 'white',
           zIndex: 10
         }}
       >
         <CloseIcon />
       </IconButton>
 
-      <Container id="section-tiles" className="section-tiles tiles-description" sx={{paddingTop: 5, paddingBottom: 0}}>
+      <Container className="section-tiles tiles-description">
         <h2>Üdvözöljük az Attila virtuális kiállítás honlapján</h2>
-        <p style={{ textAlign: 'center' }}> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p style={{ textAlign: 'center' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p> <center> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</center></p>
+        <p> <center>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</center></p>
       </Container>
 
-      <Container className='tiles-theme' sx={{ py: 0, minHeight: 650}}>
+      <Container className='tiles-theme' sx={{ py: 10 }}>
         <Typography
           variant="h4"
           align="center"
-          color="black"
+          color="white"
           gutterBottom
         >
           Válassz témát
         </Typography>
 
-        <Grid className="tiles-cards" container spacing={0} sx={{ mt: 0 }}>
-          {items.map((it) => {
-            const isActive = activeTile === it.id;
-          
-            const height =
-              activeTile === null
-                ? 90 //70
-                : isActive
-                ? 315 //280
-                : 50; //30
-          
-            return (
-              <Grid
-                key={it.id}
-                size={{ xs: 12, sm: 6, md: 12 }}
+        <Grid className='tiles-cards' container spacing={1} sx={{ mt: 4 }}>
+          {items.map((it) => (
+            <Grid onClick={() => goToPage(it.id)} key={it.id} size={{ xs: 12, sm: 6, md: 12 }}>
+              <Card
                 sx={{
-                  transition: 'all 0.4s ease',
+                  height: 70,
+                  position: 'relative',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column'
                 }}
               >
-                <Card
-                  onMouseEnter={() => setActiveTile(it.id)}
-                  onMouseLeave={() => setActiveTile(null)}
-                  onClick={() => goToPage(it.id)}
+                {/* Background image */}
+                <Box
                   sx={{
-                    height,
-                    cursor: 'pointer',
+                    position: 'absolute',
+                    inset: 0,
+                    backgroundImage: `url(${it.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    filter: 'brightness(0.7)'
+                  }}
+                />
+
+                <CardContent
+                  sx={{
                     position: 'relative',
-                    overflow: 'hidden',
+                    zIndex: 1,
+                    color: 'white',
+                    textAlign: 'left',
                     display: 'flex',
                     flexDirection: 'column',
-                    transition: 'height 0.4s ease',
+                    justifyContent: 'center',
+                    flexGrow: 1
                   }}
                 >
-                  {/* Background image */}
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      inset: 0,
-                      backgroundImage: `url(${it.image})`,
-                      //backgroundSize: isActive ? '100% auto' : 'cover',
-                      backgroundSize: isActive ? '100% auto' : '100% auto',
-                      backgroundRepeat: 'no-repeat',
-                      //backgroundPosition: isActive ? 'center top' : 'center',
-                      backgroundPosition: 'center',
-                      filter: isActive ? 'brightness(1)' : 'brightness(0.6)',
-                      transition: 'all 0.4s ease',
-                    }}
-                  />
-        
-                  <CardContent
-                    sx={{
-                      position: 'relative',
-                      zIndex: 1,
-                      color: 'white',
-                      textAlign: 'center',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: isActive ? 'top' : 'top',
-                      px: 3,
-                      height: '100%',
-                      opacity: activeTile && !isActive ? 0.4 : 1,
-                      transition: 'opacity 0.3s ease',
-                    }}
-                  >
-                    <Typography variant={isActive ? 'h6' : 'h6'}>
-                      {it.title}
-                    </Typography>
-                  
-                    {isActive && (
-                      <Typography variant="body1" sx={{ mt: 2 }}>
-                        {it.body}
-                      </Typography>
-                    )}
-                  </CardContent>
-                </Card>
-              </Grid>
-            );
-          })}
+                  <Typography variant="h5">{it.title}</Typography>
+                  <Typography variant="body2">{it.body}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </Dialog>
