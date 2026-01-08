@@ -12,6 +12,7 @@ import {
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 import sl1 from '../images/slimages/sl1_Torzitottkoponya.png';
 import sl2 from '../images/slimages/sl2_Becsiszablyamasol-0.png';
@@ -21,7 +22,8 @@ import sl5 from '../images/slimages/sl5_PaczkaFerenc_Attilanasz1884.jpg';
 import sl6 from '../images/slimages/sl6_KohlmannLipot_Attilahunkiraly1836.jpg';
 
 export default function Tiles({ open, onClose}) {
-  const navigate = useNavigate();
+const navigate = useNavigate();
+const [activeTile, setActiveTile] = useState(null);
 
   const items = [
     { id: 1, title: 'I. Attila világa – a Hun Birodalom és környezete', body: ' ', image: sl1 }, //  Attila világa – a Hun Birodalom és környezete
@@ -85,48 +87,83 @@ export default function Tiles({ open, onClose}) {
           Válassz témát
         </Typography>
 
-        <Grid className='tiles-cards' container spacing={1} sx={{ mt: 4 }}>
-          {items.map((it) => (
-            <Grid onClick={() => goToPage(it.id)} key={it.id} size={{ xs: 12, sm: 6, md: 12 }}>
-              <Card
+        <Grid className="tiles-cards" container spacing={1} sx={{ mt: 4 }}>
+          {items.map((it) => {
+            const isActive = activeTile === it.id;
+          
+            const height =
+              activeTile === null
+                ? 70
+                : isActive
+                ? 280
+                : 30;
+          
+            return (
+              <Grid
+                key={it.id}
+                size={{ xs: 12, sm: 6, md: 12 }}
                 sx={{
-                  height: 70,
-                  position: 'relative',
-                  overflow: 'hidden',
-                  display: 'flex',
-                  flexDirection: 'column'
+                  transition: 'all 0.4s ease',
                 }}
               >
-                {/* Background image */}
-                <Box
+                <Card
+                  onMouseEnter={() => setActiveTile(it.id)}
+                  onMouseLeave={() => setActiveTile(null)}
+                  onClick={() => goToPage(it.id)}
                   sx={{
-                    position: 'absolute',
-                    inset: 0,
-                    backgroundImage: `url(${it.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    filter: 'brightness(0.7)'
-                  }}
-                />
-
-                <CardContent
-                  sx={{
+                    height,
+                    cursor: 'pointer',
                     position: 'relative',
-                    zIndex: 1,
-                    color: 'white',
-                    textAlign: 'left',
+                    overflow: 'hidden',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center',
-                    flexGrow: 1
+                    transition: 'height 0.4s ease',
                   }}
                 >
-                  <Typography variant="h5">{it.title}</Typography>
-                  <Typography variant="body2">{it.body}</Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+                  {/* Background image */}
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      backgroundImage: `url(${it.image})`,
+                      backgroundSize: isActive ? '100% auto' : 'cover',
+                      backgroundRepeat: 'no-repeat',
+                      //backgroundPosition: isActive ? 'center top' : 'center',
+                      backgroundPosition: 'center',
+                      filter: isActive ? 'brightness(1)' : 'brightness(0.6)',
+                      transition: 'all 0.4s ease',
+                    }}
+                  />
+        
+                  <CardContent
+                    sx={{
+                      position: 'relative',
+                      zIndex: 1,
+                      color: 'white',
+                      textAlign: 'left',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: isActive ? 'center' : 'center',
+                      px: 3,
+                      height: '100%',
+                      opacity: activeTile && !isActive ? 0.4 : 1,
+                      transition: 'opacity 0.3s ease',
+                    }}
+                  >
+                    <Typography variant={isActive ? 'h3' : 'h6'}>
+                      {it.title}
+                    </Typography>
+                  
+                    {isActive && (
+                      <Typography variant="body1" sx={{ mt: 2 }}>
+                        {it.body}
+                      </Typography>
+                    )}
+                  </CardContent>
+                </Card>
+              </Grid>
+            );
+          })}
         </Grid>
       </Container>
     </Dialog>
