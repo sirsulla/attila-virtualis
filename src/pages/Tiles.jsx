@@ -87,39 +87,51 @@ const [activeTile, setActiveTile] = useState(null);
           Válassz témát
         </Typography>
 
-        <Grid className="tiles-cards" container spacing={0} sx={{ mt: 0 }}>
+          <Grid
+            className="tiles-cards"
+            container
+            direction="column"
+            sx={{
+              height: 550, 
+              overflow: 'hidden'
+            }}
+          >
           {items.map((it) => {
             const isActive = activeTile === it.id;
           
-            const height =
+            const flexGrow =
               activeTile === null
-                ? 90 //70
+                ? 1
                 : isActive
-                ? 315 //280
-                : 50; //30
+                ? 15   // aktív helyet kap
+                : 0.2; // inaktív összenyomódik
           
             return (
-              <Grid
+              <Box
                 key={it.id}
-                size={{ xs: 12, sm: 6, md: 12 }}
                 sx={{
-                  transition: 'all 0.4s ease',
+                  flexGrow,
+                  //transition: 'flex-grow 0.4s ease',
+                  //transition: 'flex-grow 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+                  transition: 'flex-grow 0.8s ease-in-out',
+                  minHeight: 50,     // biztonsági alsó korlát a soroknak - 50
+                  overflow: 'hidden'
                 }}
               >
-                <Card
-                  onMouseEnter={() => setActiveTile(it.id)}
-                  onMouseLeave={() => setActiveTile(null)}
-                  onClick={() => goToPage(it.id)}
-                  sx={{
-                    height,
-                    cursor: 'pointer',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    transition: 'height 0.4s ease',
-                  }}
-                >
+              
+          <Card
+            onMouseEnter={() => setActiveTile(it.id)}
+            onMouseLeave={() => setActiveTile(null)}
+            onClick={() => goToPage(it.id)}
+            sx={{
+              height: '100%',
+              cursor: 'pointer',
+              position: 'relative',
+              overflow: 'hidden',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+          >
                   {/* Background image */}
                   <Box
                     sx={{
@@ -162,7 +174,7 @@ const [activeTile, setActiveTile] = useState(null);
                     )}
                   </CardContent>
                 </Card>
-              </Grid>
+              </Box>
             );
           })}
         </Grid>
