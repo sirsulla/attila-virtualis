@@ -3,15 +3,9 @@
 html, body, #root {
 height: 100%;
 margin: 0;
-background-color: #000000;
-color: #ffffff;
-}
+background-color: #ffffff;
+color: #000000;
 
-html, body, #root {
-height: 100%;
-margin: 0;
-background-color: #000000;
-color: #ffffff;
 }
 
 :root {
@@ -21,7 +15,6 @@ color: #ffffff;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #000000;
   background-color: #000000;
 
   font-synthesis: none;
@@ -45,8 +38,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 h1 {
