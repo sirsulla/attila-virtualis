@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import { useNavigate } from 'react-router-dom';
 
-export default function SlCarousel({ images = [], captions = [] }) {
+export default function SlCarousel({ images = [], captions = [], pageId = null }) {
   const [index, setIndex] = useState(0);
   const [overlays, setOverlays] = useState({});
   const [animationKey, setAnimationKey] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
 // Reset overlay for current slide and prepare for animation
@@ -18,6 +20,12 @@ export default function SlCarousel({ images = [], captions = [] }) {
 
     return () => clearTimeout(timer);
   }, [index]);
+
+  const handleImageClick = (itemIndex) => {
+    if (pageId) {
+      navigate(`/carousel/${pageId}/${itemIndex}`);
+    }
+  };
 
   return (
     <div style={{ backgroundColor: '#000000', width: '100%', height: '350px', overflow: 'hidden', position: 'relative' }}>
@@ -50,14 +58,32 @@ export default function SlCarousel({ images = [], captions = [] }) {
       >
         {images.map((img, idx) => (
           <Carousel.Item key={idx} style={{ height: '100%', position: 'relative', overflow: 'hidden' }}>
-            <a href="#" style={{ display: 'block', height: '100%' }}>
+            <button
+              onClick={() => handleImageClick(idx)}
+              style={{
+                display: 'block',
+                height: '100%',
+                width: '100%',
+                border: 'none',
+                background: 'none',
+                cursor: pageId ? 'pointer' : 'default',
+                padding: 0,
+                margin: 0,
+              }}
+            >
               <img
                 className="d-block w-100"
                 src={img}
                 alt={`slide-${idx}`}
-                style={{ height: '100%', width: '100%', objectFit: 'cover', display: 'block' }}
+                style={{
+                  height: '100%',
+                  width: '100%',
+                  objectFit: 'cover',
+                  display: 'block',
+                  transition: pageId ? 'transform 0.3s ease' : 'none',
+                }}
               />
-              </a>
+            </button>
               {/* Descending overlay - persists per slide */}
               {overlays[idx] && (
                 <div

@@ -1,17 +1,9 @@
-.home-container {
-  scroll-snap-type: y mandatory; /* opcionális, ha szeretnél "kényszerített scrollt" */
-  overflow-y: scroll;
-  height: 100vh;
-  color: black;
-}
-
 .section {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  scroll-snap-align: start;
 }
 
 .section-home {
@@ -20,26 +12,25 @@
 
 .start-image {
   max-width: 100%;  /* nyugodtan állítható */
-  width: 50%;
+  width: 60%;
   height: auto;
-  cursor: pointer;
+  /*cursor: pointer;*/
 }
 
-.section-description {
-  background: white; /* ide jöhet bármilyen háttér */
-  padding: 50px;
+.home_button {
+  color: white;
+  background-color: rgba(167, 5, 50, .8);
+  margin-top: 70px;
+  margin-left: 50px;
+  padding: 10px;
+  padding-right: 50px;
+  padding-left: 50px;
+  font-size: 20px;
 }
 
-
-
-
-/*
-.home-wrapper {
-  background-color: #ffffff;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.home_button:hover {
+  color: white;
+  background-color: rgba(167, 5, 50);
+  border-color: rgba(167, 5, 50);
 }
-*/
 
