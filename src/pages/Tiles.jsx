@@ -17,6 +17,7 @@ import { useState } from 'react';
 import sl1 from '../images/slimages/sl1_Torzitottkoponya.png';
 import sl2 from '../images/slimages/sl2_Becsiszablyamasol-0.png';
 import sl3 from '../images/slimages/sl3_Nr003_v_fej.jpg';
+//import sl3 from '../images/slimages/III.MNM_ET_C#1897.34.18.#Nr527_v_1200.png';
 import sl4 from '../images/slimages/sl4_PietroasaTreasure.png';
 import sl5 from '../images/slimages/sl5_PaczkaFerenc_Attilanasz1884.jpg';
 import sl6 from '../images/slimages/sl6_KohlmannLipot_Attilahunkiraly1836.jpg';
@@ -60,10 +61,11 @@ const [activeTile, setActiveTile] = useState(null);
       {/* Close button */}
       <IconButton
         onClick={onClose}
+        //size="large"
         sx={{
           position: 'absolute',
-          top: 16,
-          right: 16,
+          top: 8,
+          right: 28,
           color: 'black',
           zIndex: 10
         }}
@@ -71,13 +73,13 @@ const [activeTile, setActiveTile] = useState(null);
         <CloseIcon />
       </IconButton>
 
-      <Container className="section-tiles tiles-description" sx={{paddingTop: 5, paddingBottom: 0}}>
+      <Container className="section-tiles tiles-description" sx={{paddingTop: 5, paddingBottom: 0, textAlign: 'center'}}>
         <h2>Üdvözöljük az Attila virtuális kiállítás honlapján</h2>
         <p> <center> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</center></p>
         <p> <center>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</center></p>
       </Container>
 
-      <Container className='tiles-theme' sx={{ py: 0, minHeight: 650}}>
+      <Container className='tiles-theme' sx={{ py: 0, minHeight: 650}}> {/*700 , 650 */} 
         <Typography
           variant="h4"
           align="center"
@@ -92,7 +94,8 @@ const [activeTile, setActiveTile] = useState(null);
             container
             direction="column"
             sx={{
-              height: 550, 
+              //height: 550, // 600
+              height: 550,
               overflow: 'hidden'
             }}
           >
@@ -114,7 +117,7 @@ const [activeTile, setActiveTile] = useState(null);
                   //transition: 'flex-grow 0.4s ease',
                   //transition: 'flex-grow 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
                   transition: 'flex-grow 0.8s ease-in-out',
-                  minHeight: 50,     // biztonsági alsó korlát a soroknak - 50
+                  minHeight: 10,     // biztonsági alsó korlát a soroknak - 50
                   overflow: 'hidden'
                 }}
               >
@@ -129,7 +132,8 @@ const [activeTile, setActiveTile] = useState(null);
               position: 'relative',
               overflow: 'hidden',
               display: 'flex',
-              flexDirection: 'column'
+              flexDirection: 'column',
+              justifyContent: 'center'
             }}
           >
                   {/* Background image */}
@@ -156,22 +160,32 @@ const [activeTile, setActiveTile] = useState(null);
                       textAlign: 'center',
                       display: 'flex',
                       flexDirection: 'column',
-                      justifyContent: isActive ? 'top' : 'top',
+                      //justifyContent: isActive ? 'top' : 'top',
+                      justifyContent: 'center',
                       px: 3,
                       height: '100%',
                       opacity: activeTile && !isActive ? 0.4 : 1,
                       transition: 'opacity 0.3s ease',
+                      maxHeight: 50 // Az inaktív sorok méretét szabályozza, inkább ez befolyásolja mint a minHeight - 50
                     }}
                   >
-                    <Typography variant={isActive ? 'h6' : 'h6'}>
-                      {it.title}
-                    </Typography>
                   
-                    {isActive && (
+                  <Typography
+                  variant="h6"
+                  sx={(theme) => ({
+                  fontSize: isActive ? theme.typography.h4.fontSize : theme.typography.h6.fontSize,
+                  lineHeight: isActive ? theme.typography.h4.lineHeight : theme.typography.h6.lineHeight,
+                  transition: 'font-size 0.5s ease, line-height 0.5s ease'
+                  })}>
+                  
+                  {it.title}
+                  </Typography>
+                  
+                    {/*isActive && (
                       <Typography variant="body1" sx={{ mt: 2 }}>
                         {it.body}
                       </Typography>
-                    )}
+                    )*/}
                   </CardContent>
                 </Card>
               </Box>

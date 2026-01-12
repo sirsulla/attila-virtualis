@@ -24,3 +24,11 @@
 .tiles-cards {
   cursor: pointer;
 }
+
+.css-1umw9bq-MuiSvgIcon-root {
+  font-size: 30px !important;
+}
+
+.css-g7fug4-MuiCardContent-root {
+  /*padding-bottom: -6px !important;*/
+}
