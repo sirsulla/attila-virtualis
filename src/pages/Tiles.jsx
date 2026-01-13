@@ -16,11 +16,11 @@ import { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-import sl1 from '../images/slimages/sl1_Torzitottkoponya.png';
-import sl2 from '../images/slimages/sl2_Becsiszablyamasol-0.png';
+import sl1 from '../images/slimages/sl1_Torzitottkoponya.jpg';
+import sl2 from '../images/slimages/sl2_Becsiszablyamasol-0.jpg';
 import sl3 from '../images/slimages/sl3_Nr003_v_fej.jpg';
 //import sl3 from '../images/slimages/III.MNM_ET_C#1897.34.18.#Nr527_v_1200.png';
-import sl4 from '../images/slimages/sl4_PietroasaTreasure.png';
+import sl4 from '../images/slimages/sl4_PietroasaTreasure.jpg';
 import sl5 from '../images/slimages/sl5_PaczkaFerenc_Attilanasz1884.jpg';
 import sl6 from '../images/slimages/sl6_KohlmannLipot_Attilahunkiraly1836.jpg';
 
@@ -61,7 +61,8 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
           //color: 'rgba(255, 255, 255, 1)',
           backdropFilter: 'blur(6px)'*/
               height: '100%',
-              backgroundColor: 'rgba(255, 255, 255, 0.65)',
+              //backgroundColor: 'rgba(255, 255, 255, 0.65)',
+              backgroundColor: 'rgb(255, 255, 255)',
               backdropFilter: 'blur(6px)',
               overflowY: {
               xs: 'auto',   // 📱 mobil: scroll
@@ -115,8 +116,8 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
               /*height: 550,
               overflow: 'hidden'*/
                   height: {
-                xs: 450,  // 📱 mobil: tartalom diktál, 'auto' 450,
-                md: 490,     // 💻 desktop: harmonika 550 , 530 , 490   
+                xs: 440,  // 📱 mobil: tartalom diktál, 'auto' 450,
+                md: 440,     // 💻 desktop: harmonika 550 , 530 , 490   
               },
               overflow: {
                 xs: 'visible',
@@ -133,7 +134,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
             ? 1
             : isActive
             ? 15
-            : 0.2;
+            : 0.1;
           
             return (
               <Box
@@ -159,6 +160,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
+                    borderRadius: 0,
                   }}
                 >
                   {/* Background image */}
@@ -191,7 +193,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
                       height: "100%",
                       opacity: activeTile && !isActive ? 0.4 : 1,
                       transition: "opacity 0.3s ease",
-                      maxHeight: 50, // Az inaktív sorok méretét szabályozza, inkább ez befolyásolja mint a minHeight - 50
+                      maxHeight: 10, // Az inaktív sorok méretét szabályozza, inkább ez befolyásolja mint a minHeight - 50
                     }}
                   >
                     <Typography
