@@ -65,7 +65,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
               backdropFilter: 'blur(6px)',
               overflowY: {
               xs: 'auto',   // 📱 mobil: scroll
-              md: 'hidden', // 💻 desktop: nincs scroll
+              //md: 'hidden', // 💻 desktop: nincs scroll
           }    
         }
       }}
