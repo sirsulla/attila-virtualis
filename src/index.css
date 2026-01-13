@@ -10,8 +10,9 @@ color: #ffffff;
 html, body, #root {
 height: 100%;
 margin: 0;
-background-color: #000000;
-color: #ffffff;
+background-color: #ffffff;
+color: #000000;
+
 }
 
 :root {

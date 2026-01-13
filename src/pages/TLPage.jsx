@@ -1,18 +1,30 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { Container, Typography, Box, Button } from "@mui/material";
 import { slPagesData } from "../data/slpagesdata";
 import { tlPagesData } from "../data/tlpagesdata";
-import arrowIcon from "../components/arrows.png";
+import Leftbutton from '../components/Leftbutton';
 
 export default function TLPage() {
   const { pageId, itemIndex } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    // Add small delay to ensure page is rendered before scrolling
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }, 0);
+    return () => clearTimeout(timer);
+  }, [location]);
 
   const slpage = slPagesData.find(c => c.id === parseInt(pageId));
   
   if (!slpage) return (
-    <Box sx={{ backgroundColor: '#000000', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <Typography sx={{ color: '#ffffff' }}>Page not found</Typography>
+    <Box sx={{ backgroundColor:  '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Typography sx={{ color: '#000000' }}>Page not found</Typography>
     </Box>
   );
 
@@ -25,22 +37,16 @@ export default function TLPage() {
 
   if (!title || !image) {
     return (
-      <Box sx={{ backgroundColor: '#000000', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Typography sx={{ color: '#ffffff' }}>Item not found</Typography>
+      <Box sx={{ backgroundColor:  '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Typography sx={{ color:  '#000000' }}>Item not found</Typography>
       </Box>
     );
   }
 
   return (
-    <Box sx={{ backgroundColor: '#000000', minHeight: '100vh', width: '100vw', m: 0, p: 0, display: 'flex', flexDirection: 'column' }}>
-      <Container sx={{ width: 'min(900px, 100%)', mx: 'auto', color: '#ffffff', py: 5 }}>
-        <Button
-          onClick={() => navigate(-1)}
-          sx={{ color: '#ffffff', mb: 3, '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.1)' }, display: 'flex', alignItems: 'center', gap: 1, fontFamily: 'Montserrat' }}
-        >
-          <img src={arrowIcon} alt="back" style={{ width: '24px', height: '24px', filter: 'brightness(0) invert(1)' }} />
-          Back
-        </Button>
+    <Box sx={{ backgroundColor: '#ffffff', minHeight: '100vh', width: '100vw', m: 0, p: 0, display: 'flex', flexDirection: 'column' }}>
+      <Container sx={{ width: 'min(900px, 100%)', mx: 'auto', color: '#000000', py: 5, backgroundColor: '#ffffff' }}>
+        <Leftbutton />
 
         <Typography variant="h4" sx={{ mb: 4, textAlign: 'center' }}>
           {title}

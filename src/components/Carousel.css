@@ -14,7 +14,7 @@
 }
 .carousel__slide{
 	display:block;
-	box-sizing:border-box;
+	box-sizing:border-box; 
 	padding:8px;
 	text-decoration:none;
 	color:inherit;
