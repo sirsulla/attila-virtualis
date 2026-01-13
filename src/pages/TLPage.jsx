@@ -1,13 +1,12 @@
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { Container, Typography, Box, Button } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 import { slPagesData } from "../data/slpagesdata";
 import { tlPagesData } from "../data/tlpagesdata";
 import Leftbutton from '../components/Leftbutton';
 
 export default function TLPage() {
   const { pageId, itemIndex } = useParams();
-  const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
