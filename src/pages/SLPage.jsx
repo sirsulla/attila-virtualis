@@ -7,7 +7,6 @@ import Leftbutton from '../components/Leftbutton';
 
 export default function CardPage() {
   const { id } = useParams();
-  //const navigate = useNavigate();
   const location = useLocation();
   const slpage = slPagesData.find(c => c.id === parseInt(id));
   
@@ -28,7 +27,6 @@ export default function CardPage() {
       <Container sx={{ width: 'min(900px, 100%)', mx: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', color: '#000000', py: 5 }}>
 
         <Leftbutton to="/#section-tiles" />
-
 
         <Typography variant="h4" sx={{ mb: 4 }}>
           {slpage.title}

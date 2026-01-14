@@ -11,10 +11,10 @@
 }
 
 .start-image {
-  max-width: 100%;  /* nyugodtan állítható */
-  width: 60%;
+  /*max-width: 100%;  /* nyugodtan állítható */
+  width: 100%;
   height: auto;
-  /*cursor: pointer;*/
+  cursor: pointer;
 }
 
 .home_button {

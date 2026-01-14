@@ -1,5 +1,5 @@
 .section-tiles {
-  height: 100vh;
+  /*height: 100vh;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,10 +8,12 @@
 
 .tiles-description {
  /*background: white; 
-  padding: 50px;*/
+  padding: 50px;
   padding-left: 0px !important; 
-  padding-right: 0px !important;
-  max-width: 1600px !important; 
+  padding-right: 0px !important; */
+  /*margin-left: 0px !important; 
+  margin-right: 0px !important;*/
+ max-width: 1600px !important; 
 }
 
 .tiles-theme {
@@ -23,4 +25,12 @@
 
 .tiles-cards {
   cursor: pointer;
+}
+
+.css-1umw9bq-MuiSvgIcon-root {
+  font-size: 30px !important;
+}
+
+.css-g7fug4-MuiCardContent-root {
+  /*padding-bottom: -6px !important;*/
 }

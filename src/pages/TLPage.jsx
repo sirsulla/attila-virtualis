@@ -7,7 +7,6 @@ import Leftbutton from '../components/Leftbutton';
 
 export default function TLPage() {
   const { pageId, itemIndex } = useParams();
-  //const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {

@@ -22,10 +22,10 @@ import sl6c from '../images/carouselimages/sixthpage/sl6_KohlmannLipot_Attilahun
 import sl6d from '../images/carouselimages/sixthpage/sl6_Ismeretlenfesto_BudavezerBuda.jpg';
 import sl6e from '../images/carouselimages/sixthpage/sl6_TK_FE14Arc.jpg';
 import sl6f from '../images/carouselimages/sixthpage/sl6_KossuthLajoskormanyzoelnokidiszolt.jpg';
-import sl1 from '../images/slimages/sl1_Torzitottkoponya.png';
-import sl2 from '../images/slimages/sl2_Becsiszablyamasol-0.png';
-import sl3 from '../images/slimages/sl3_Nr003_v_fej.png';
-import sl4 from '../images/slimages/sl4_PietroasaTreasure.png';
+import sl1 from '../images/slimages/sl1_Torzitottkoponya.jpg';
+import sl2 from '../images/slimages/sl2_Becsiszablyamasol-0.jpg';
+import sl3 from '../images/slimages/sl3_Nr003_v_fej.jpg';
+import sl4 from '../images/slimages/sl4_PietroasaTreasure.jpg';
 import sl5 from '../images/slimages/sl5_PaczkaFerenc_Attilanasz1884.jpg';
 import sl6 from '../images/slimages/sl6_KohlmannLipot_Attilahunkiraly1836.jpg';
 
