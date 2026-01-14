@@ -5,6 +5,7 @@ import { slPagesData } from "../data/slpagesdata";
 import SlCarousel from '../components/SlCarousel';
 import Leftbutton from '../components/Leftbutton';
 import Showmore from '../components/Showmore';
+import Footer from '../components/Footer';
 
 export default function CardPage() {
   const { id } = useParams();
@@ -45,7 +46,9 @@ export default function CardPage() {
         <Box sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#ffffff' }}>
           <SlCarousel images={slpage.carousimages} captions={slpage.caroustexts} pageId={slpage.id}/>
         </Box>
+        
       </Container>
+      <Footer/>
     </Box>
   );
 }
