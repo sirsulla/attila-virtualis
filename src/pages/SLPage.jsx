@@ -4,6 +4,7 @@ import { Container, Typography, Box } from "@mui/material";
 import { slPagesData } from "../data/slpagesdata";
 import SlCarousel from '../components/SlCarousel';
 import Leftbutton from '../components/Leftbutton';
+import Showmore from '../components/Showmore';
 
 export default function CardPage() {
   const { id } = useParams();
@@ -32,9 +33,9 @@ export default function CardPage() {
           {slpage.title}
         </Typography>
 
-        <Typography variant="body1" paragraph sx={{ width: '100%', textAlign: 'justify', mb: 6, whiteSpace: 'pre-wrap' }}>
-          {slpage.text}
-        </Typography>
+        <Box sx={{ mb: 6 }}>
+          <Showmore text={slpage.text} charLimit={600} />
+        </Box>
 
         <Typography variant="h5" sx={{ mb: 6 }}>
           Még néhány érdekesség:
