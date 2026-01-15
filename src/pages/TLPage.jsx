@@ -4,6 +4,7 @@ import { Container, Typography, Box } from "@mui/material";
 import { slPagesData } from "../data/slpagesdata";
 import { tlPagesData } from "../data/tlpagesdata";
 import Leftbutton from '../components/Leftbutton';
+import Footer from '../components/Footer';
 
 export default function TLPage() {
   const { pageId, itemIndex } = useParams();
@@ -87,6 +88,7 @@ export default function TLPage() {
           {contentData ? contentData.content : 'Content not available'}
         </Typography>
       </Container>
+      <Footer/>
     </Box>
   );
 }

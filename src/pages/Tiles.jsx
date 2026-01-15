@@ -117,7 +117,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
               overflow: 'hidden'*/
                   height: {
                 xs: 440,  // 📱 mobil: tartalom diktál, 'auto' 450,
-                md: 440,     // 💻 desktop: harmonika 550 , 530 , 490   
+                md: 440,     // 💻 desktop: harmonika 550 , 530 , 490   , '35vh'
               },
               overflow: {
                 xs: 'visible',
