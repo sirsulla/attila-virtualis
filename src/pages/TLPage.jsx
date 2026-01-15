@@ -52,11 +52,28 @@ export default function TLPage() {
         </Typography>
 
         <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
-          <img
-            src={image}
-            alt={title}
-            style={{ maxWidth: '100%', maxHeight: '500px', objectFit: 'cover', borderRadius: '3px' }}
-          />
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <img
+              src={image}
+              alt={title}
+              style={{ maxWidth: '100%', maxHeight: '500px', objectFit: 'cover', borderRadius: '3px', marginBottom: '8px' }}
+            />
+            {contentData?.caption && (
+              <Typography
+                variant="caption"
+                sx={{
+                  display: 'block',
+                  textAlign: 'center',
+                  color: '#666666',
+                  fontStyle: 'italic',
+                  fontSize: '0.85rem',
+                  whiteSpace: 'pre-wrap',
+                  lineHeight: 1.5,
+                }}
+                dangerouslySetInnerHTML={{ __html: contentData.caption }}
+              />
+            )}
+          </Box>
         </Box>
 
         <Typography

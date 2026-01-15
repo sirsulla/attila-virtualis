@@ -41,7 +41,7 @@ export default function Leftbutton({ to }) {
         fontFamily: 'Montserrat'
       }}
     >
-      <img src={arrowIcon} alt="back" style={{ width: '100px' }} />
+      <img src={arrowIcon} alt="back" style={{ width: '60px' }} />
       Vissza
     </Button>
   );

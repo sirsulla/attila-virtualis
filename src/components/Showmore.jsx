@@ -2,11 +2,22 @@ import { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export default function Showmore({ text, charLimit = 300 }) {
+export default function Showmore({ text, charLimit = 300, sentenceLimit = null }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const isTruncated = text.length > charLimit;
-  const displayText = isExpanded ? text : text.substring(0, charLimit);
+  const getSentenceLimitedText = (fullText, limit) => {
+    const sentences = fullText.match(/[^.!?]+[.!?]+/g) || [fullText];
+    return sentences.slice(0, limit).join('').trim();
+  };
+
+  const truncatedText = sentenceLimit 
+    ? getSentenceLimitedText(text, sentenceLimit)
+    : text.substring(0, charLimit);
+  
+  const isTruncated = sentenceLimit 
+    ? getSentenceLimitedText(text, sentenceLimit).length < text.length
+    : text.length > charLimit;
+  const displayText = isExpanded ? text : truncatedText;
 
   const handleToggle = () => {
     setIsExpanded(!isExpanded);
@@ -34,7 +45,7 @@ export default function Showmore({ text, charLimit = 300 }) {
             onClick={handleToggle}
             sx={{
               cursor: 'pointer',
-              ml: 1,
+              ml: '800px',
               fontSize: '2.5rem',
               transition: 'transform 0.3s ease',
               transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
