@@ -32,12 +32,13 @@ export default function Leftbutton({ to }) {
       onClick={handleClick}
       sx={{
         mb: 3,
+        ml: -2,
         alignSelf: 'flex-start',
         '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.1)' },
         display: 'flex',
         alignItems: 'center',
         color: '#000000',
-        gap: 1,
+        gap: 0.5,
         fontFamily: 'Montserrat'
       }}
     >

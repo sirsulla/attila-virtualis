@@ -31,7 +31,7 @@ export default function Showmore({ text, charLimit = 300, sentenceLimit = null }
         sx={{ 
           width: '100%', 
           textAlign: 'justify', 
-          mb: 2, 
+          mb: 0, 
           whiteSpace: 'pre-wrap',
           display: 'flex',
           flexWrap: 'wrap',

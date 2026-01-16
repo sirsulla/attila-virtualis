@@ -34,7 +34,7 @@ export default function CardPage() {
           {slpage.title}
         </Typography>
 
-        <Box sx={{ mb: 4 }}>
+        <Box sx={{ mb: 2 }}>
           <Showmore text={slpage.text} sentenceLimit={slpage.numberofsentences} />
         </Box>
 
