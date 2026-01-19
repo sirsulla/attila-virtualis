@@ -13,25 +13,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
 }
 
 .section-home {
-  background: white;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+  height: 100vh;
+  width: min(100vw);
+  background-image: url('../images/landing-page/hatter.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .start-image {
   cursor: pointer;
-  width: 100%;
-  /*height: 100vh;*/
-  display: block;
-  object-fit: cover;
-  object-position: center;
+
+  width: min(75vw);
+  height: auto;
+
+  transition: transform 0.2s ease;
 }
 
 @media (max-width: 1024px) {
@@ -39,7 +42,7 @@
 .start-image {
   cursor: pointer;
   width: 100%;
-  height: 100vh;
+  height: 60vh;
   display: block;
   object-fit: cover;
   object-position: center;
@@ -51,11 +54,8 @@
 
 .start-image {
   cursor: pointer;
-  width: 100%;
-  height: 100vh;
-  display: block;
-  object-fit: cover;
-  object-position: center;
+  max-width: 100%;
+  height: 45vh;
 }
 
 }
