@@ -30,15 +30,15 @@ export default function CardPage() {
 
         <Leftbutton to="/#section-tiles" />
 
-        <Typography variant="h4" sx={{ mb: 4 }}>
+        <Typography variant="h5" sx={{ mb: 4 }}>
           {slpage.title}
         </Typography>
 
-        <Box sx={{ mb: 6 }}>
-          <Showmore text={slpage.text} charLimit={600} />
+        <Box sx={{ mb: 4 }}>
+          <Showmore text={slpage.text} sentenceLimit={slpage.numberofsentences} />
         </Box>
 
-        <Typography variant="h5" sx={{ mb: 6 }}>
+        <Typography variant="h6" sx={{ mb: 5 }}>
           Még néhány érdekesség:
 
         </Typography>
