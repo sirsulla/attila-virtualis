@@ -104,7 +104,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
           color="black"
           gutterBottom
         >
-          Válassz témát
+          Válassz témát!
         </Typography>
 
           <Grid

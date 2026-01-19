@@ -52,12 +52,12 @@ export default function TLPage() {
           {title}
         </Typography>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb:-2 }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <img
               src={image}
               alt={title}
-              style={{ maxWidth: '100%', maxHeight: '500px', objectFit: 'cover', borderRadius: '3px', marginBottom: '8px' }}
+              style={{ maxWidth: '100%', maxHeight: '500px', objectFit: 'cover', borderRadius: '3px', marginBottom: '30px' }}
             />
             {contentData?.caption && (
               <Typography
@@ -97,7 +97,7 @@ export default function TLPage() {
           sx={{
             width: '100%',
             textAlign: 'justify',
-            mb: 6,
+            mb: 2,
             whiteSpace: 'pre-wrap',
             lineHeight: 1.8,
           }}
