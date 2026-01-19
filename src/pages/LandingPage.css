@@ -1,24 +1,74 @@
+/*
 .section {
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}*/
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 .section-home {
   background: white;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .start-image {
-  /*max-width: 100%;*/  /* nyugodtan állítható */ 
-  width: 100%;
-  height: 100%;
   cursor: pointer;
-/* width: 100%;
+  width: 100%;
+  /*height: 100vh;*/
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 1024px) {
+
+.start-image {
+  cursor: pointer;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+}
+
+@media (max-width: 375px) {
+
+.start-image {
+  cursor: pointer;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+}
+
+/*
+.start-image {
+  /*max-width: 100%;*/  
+/*  width: 100%;
+  cursor: pointer;
+/* width: 100%;h
    height: 100vh; 
    background-size: cover;    
    background-position: center;  
    background-repeat: no-repeat;
-   background-attachment: fixed;*/
-}
+   background-attachment: fixed;
+}*/

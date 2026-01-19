@@ -27,7 +27,6 @@ export default function LandingPage({ items }) {
       <div className="home-container">
         <section className="section section-home">
           <img src={startImage} alt="Start logo" className="start-image" onClick={() => setExploreOpen(true)}/>
-          {/*<button className="home_button" onClick={() => setExploreOpen(true)}> No lámsza! </button>*/}
         </section>
       </div>
 
