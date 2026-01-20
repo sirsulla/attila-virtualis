@@ -35,8 +35,7 @@ export const slPagesData = [
 		carousimages: [sl1a, sl1b, sl1c],
 		caroustexts: ['A hun üstök','Népek a hun kori Kárpát-medencében','Torzított koponyák'],
 		numberofsentences: 5
-		caroustexts: ['A hun üstök','Népek a hun kori Kárpát-medencében','Torzított koponyák'],
-		numberofsentences: 5
+		
 	},
 	{
 		id: 2,
@@ -47,8 +46,7 @@ export const slPagesData = [
 		carousimages: [sl2a, sl2b, sl2c],
 		caroustexts: ['A bécsi szablya','Egy legendás attribútum. Attila kardjának ábrázolásai a késő középkortól a 20. századig','Hun kori kardok'],
 		numberofsentences: 5
-		caroustexts: ['A bécsi szablya','Egy legendás attribútum. Attila kardjának ábrázolásai a késő középkortól a 20. századig','Hun kori kardok'],
-		numberofsentences: 5
+		
 	},
 	{
 		id: 3,
@@ -69,8 +67,7 @@ export const slPagesData = [
 		carousimages: [sl4a, sl4b, sl4c],
 		caroustexts: ['A hun kori előkelők ékszerei','Hun kori áldozati együttesek','A nomád uralkodók közösségi rituáléi'],
 		numberofsentences: 5
-		caroustexts: ['A hun kori előkelők ékszerei','Hun kori áldozati együttesek','A nomád uralkodók közösségi rituáléi'],
-		numberofsentences: 5
+		
 	},
 	{
 		id: 5,
@@ -81,8 +78,7 @@ export const slPagesData = [
 		carousimages: [sl5a, sl5b, sl5c],
 		caroustexts: ['Késő hun kori előkelő halotti áldozati együttese – Szeged-Nagyszéksós','Paczka Ferenc Attila halálát ábrázoló kolosszálképe','Kós Károly: Paraván Attila halálának és temetésének jeleneteivel'],
 		numberofsentences: 5
-		caroustexts: ['Késő hun kori előkelő halotti áldozati együttese – Szeged-Nagyszéksós','Paczka Ferenc Attila halálát ábrázoló kolosszálképe','Kós Károly: Paraván Attila halálának és temetésének jeleneteivel'],
-		numberofsentences: 5
+		
 	},
 	{
 		id: 6,
@@ -94,8 +90,7 @@ export const slPagesData = [
 		carousimages: [sl6a, sl6b, sl6c, sl6d, sl6e, sl6f],
 		caroustexts: ['Attila magyar hagyományáról','Attila ábrázolásai első magyar királyként - I.','Attila ábrázolásai első magyar királyként - II.','Buda városának névadó vezére','Hunyadi Mátyás mint „második Attila”','Az atilla kabát'],
 		numberofsentences: 4
-		caroustexts: ['Attila magyar hagyományáról','Attila ábrázolásai első magyar királyként - I.','Attila ábrázolásai első magyar királyként - II.','Buda városának névadó vezére','Hunyadi Mátyás mint „második Attila”','Az atilla kabát'],
-		numberofsentences: 4
+		
 	}
 ];
 
