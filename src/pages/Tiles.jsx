@@ -15,6 +15,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import { tilesPageData } from '../data/tilespagedata';
+import Showmore from '../components/Showmore';
 
 import sl1 from '../images/slimages/sl1_Torzitottkoponya.jpg';
 import sl2 from '../images/slimages/sl2_Becsiszablyamasol-0.jpg';
@@ -30,6 +32,7 @@ const [activeTile, setActiveTile] = useState(null);
 const theme = useTheme();
 const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
+  const tilesHeader = tilesPageData;
 
   const items = [
     { id: 1, title: 'Attila világa – a Hun Birodalom és környezete', body: ' ', image: sl1 }, //  Attila világa – a Hun Birodalom és környezete
@@ -91,10 +94,9 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
       </IconButton>
 
       <Container className="section-tiles tiles-description" sx={{/*paddingTop: 5, paddingBottom: 0, textAlign: 'center'*/ pt: { xs: 7, md: 5 }, pb: { xs: 0.5, md: 0 }, textAlign: 'center', fontSize: {xs: '80%', md: '100%'}}}>
-        <h2>Üdvözöljük az Attila virtuális kiállítás honlapján</h2>
+        <h2>{tilesHeader.title}</h2>
         <p></p>
-        <p>Attila az egyik legismertebb történelmi személyiség. Híre összeköti Európát és Ázsiát, az ókor végét és a középkort a mával. Megítélése kultúránként és koronként változik. Már saját korában isteni szférába emelkedett. Halála után másfél évszázaddal a keresztény gondolkodásban már az isteni büntetés eszköze, civilizációkat elpusztító, démoni lény, a gonosz megtestesítője, másfelől viszont az alattvalói közötti konfliktusokba belekeveredő ember, de legitimáló erővel bíró ősapa, mitikus hős is. Mai tudásunk szerint, ha az európai ókor végét és a középkor kezdetét egyetlen személy tevékenységéhez kellene kötnünk, Attila lenne az. E sokszínűséget a hagyomány hordozóinak sokfélesége okozta. A római szervezettség örököse, a nyugati egyház Attila és a hun hódítás pusztító aspektusait élte meg. Ennél összetettebb a kép a germán hagyományban, hiszen a Római Birodalom romjain kibontakozó középkori Európa germán elitjeinek első generációi többnyire Attila udvarában ismerték meg egymást, s a Hun Birodalom tette lehetővé felemelkedésüket.</p>
-        <p>A legendák Attilájának története a mítoszképződés szabályait követi. A megszülető gyermek előbb isteni segítséggel hőssé válik, és elfoglalja méltó helyét a világban; mozgalmas életútja során döntő hatást gyakorol a világra, visszafordíthatatlanul megváltoztatja Európa képét. Végül hatalma csúcsán, váratlanul és tragikus körülmények között bukik el. Ez az emberi múlt ősi rétegeibe nyúló logika átsüt Attila történetén. A hadisten kardja révén hőssé válik, uralkodóként pusztító és teremtő erővel bír; hatalma zenitjén, lakomáján hódol előtte az egész világ. Bukása váratlan, egyeseknek megváltást, másoknak összeomlást hoz. Kiállításunk lépésről lépésre követi azt a máig tartó történetet, amelynek nyomán egy nomád birodalom utolsó, legsikeresebb, nagy uralkodójából másfél évezredre a nyugati civilizáció identitásának egyik alapköve, ezer évre pedig az Árpádok ősapja, a magyarok hőse lett. Attila évezredes mítosza ma is él. Befolyásolja, hogyan gondolkodunk Európa és Ázsia viszonyáról, a világban elfoglalt helyünkről; vagy akár a múltról, a magyarok eredetéről.</p>
+        <Showmore text={tilesHeader.text} sentenceLimit={tilesHeader.numberofsentences} />
       </Container>
 
       <Container className='tiles-theme' sx={{ py: 0, minHeight: {xs: 80, md: 10}}}> {/*700 , 650 */} 

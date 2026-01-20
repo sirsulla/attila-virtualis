@@ -44,7 +44,7 @@ export default function CardPage() {
         </Typography>
 
         <Box sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#ffffff' }}>
-          <SlCarousel images={slpage.carousimages} captions={slpage.caroustexts} pageId={slpage.id}/>
+          <SlCarousel images={slpage.carousimages} captions={slpage.caroustexts} carouselTexts={slpage.caroustexts}/>
         </Box>
         
       </Container>

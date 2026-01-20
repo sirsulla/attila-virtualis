@@ -1,13 +1,13 @@
 import { useParams, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Container, Typography, Box } from "@mui/material";
-import { slPagesData } from "../data/slpagesdata";
+
 import { tlPagesData } from "../data/tlpagesdata";
 import Leftbutton from '../components/Leftbutton';
 import Footer from '../components/Footer';
 
 export default function TLPage() {
-  const { pageId, itemIndex } = useParams();
+  const { pageId } = useParams();
   const location = useLocation();
 
   useEffect(() => {
@@ -20,28 +20,17 @@ export default function TLPage() {
     return () => clearTimeout(timer);
   }, [location]);
 
-  const slpage = slPagesData.find(c => c.id === parseInt(pageId));
+  // Find content from tlpagesData based on title (pageId now contains the title)
+  const contentData = tlPagesData.find(item => item.title === pageId);
   
-  if (!slpage) return (
+  if (!contentData) return (
     <Box sx={{ backgroundColor:  '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <Typography sx={{ color: '#000000' }}>Page not found</Typography>
     </Box>
   );
 
-  const itemIdx = parseInt(itemIndex);
-  const title = slpage.caroustexts[itemIdx];
-  const image = slpage.carousimages[itemIdx];
-  
-  // Find content from tlpagesData based on title
-  const contentData = tlPagesData.find(item => item.title === title);
-
-  if (!title || !image) {
-    return (
-      <Box sx={{ backgroundColor:  '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Typography sx={{ color:  '#000000' }}>Item not found</Typography>
-      </Box>
-    );
-  }
+  const title = contentData.title;
+  const image = contentData.image;
 
   return (
     <Box sx={{ backgroundColor: '#ffffff', minHeight: '100vh', width: '100vw', m: 0, p: 0, display: 'flex', flexDirection: 'column' }}>
@@ -52,7 +41,7 @@ export default function TLPage() {
           {title}
         </Typography>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', mb:-2 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 5 }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <img
               src={image}
@@ -76,20 +65,6 @@ export default function TLPage() {
             )}
           </Box>
         </Box>
-
-        <Typography
-          variant="body2"
-          sx={{
-            display: 'block',
-            textAlign: 'center',
-            mb: 4,
-            color: 'rgba(255, 255, 255, 0.7)',
-            fontStyle: 'italic',
-            fontSize: '1rem',
-          }}
-        >
-          {title}
-        </Typography>
 
         <Typography
           variant="body1"

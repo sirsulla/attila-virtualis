@@ -27,7 +27,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/card/:id" element={<SLPage />} />
-          <Route path="/carousel/:pageId/:itemIndex" element={<TLPage />} />
+          <Route path="/carousel/:pageId" element={<TLPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

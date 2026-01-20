@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { useNavigate } from 'react-router-dom';
 
-export default function SlCarousel({ images = [], captions = [], pageId = null }) {
+export default function SlCarousel({ images = [], captions = [], pageId = null, carouselTexts = [] }) {
   const [index, setIndex] = useState(0);
   const [overlays, setOverlays] = useState({});
   const [animationKey, setAnimationKey] = useState(0);
@@ -22,8 +22,9 @@ export default function SlCarousel({ images = [], captions = [], pageId = null }
   }, [index]);
 
   const handleImageClick = (itemIndex) => {
-    if (pageId) {
-      navigate(`/carousel/${pageId}/${itemIndex}`);
+    if (carouselTexts && carouselTexts[itemIndex]) {
+      const itemTitle = carouselTexts[itemIndex];
+      navigate(`/carousel/${itemTitle}`);
     }
   };
 
