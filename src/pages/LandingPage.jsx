@@ -3,7 +3,8 @@ import './LandingPage.css';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Tiles from './Tiles';
-import startImage from '../images/landing-page/start.png';
+import startLogo from '../images/landing-page/startLogo.png';
+// startImage
 
 export default function LandingPage({ items }) {
   const location = useLocation();
@@ -26,8 +27,7 @@ export default function LandingPage({ items }) {
     <>
       <div className="home-container">
         <section className="section section-home">
-          <img src={startImage} alt="Start logo" className="start-image" onClick={() => setExploreOpen(true)}/>
-          {/*<button className="home_button" onClick={() => setExploreOpen(true)}> No lámsza! </button>*/}
+          <img src={startLogo} alt="Start logo" className="start-image" onClick={() => setExploreOpen(true)}/>
         </section>
       </div>
 
