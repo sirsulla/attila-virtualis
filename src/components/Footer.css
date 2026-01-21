@@ -1,7 +1,7 @@
 .footerBase {
   background-color: rgb(207, 207, 207);
   width: 100%;
-  padding: 30px 0 20px;
+  padding: 25px 0 25px;
   display: flex;
   justify-content: center;
 }
@@ -29,6 +29,7 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
+    margin-bottom: 0 !important;
 }
 
 .contributorsNamesLastRow{
@@ -49,10 +50,17 @@
   height: auto;
 }
 
+@media (max-width: 1600px) {
+    .contributorsBoxParent {
+        width: min(1200px, 100%);
+        padding: 0 0.5vh 0 5vh;
+    }
+}
+
 @media (max-width: 1024px) {
 
 .contributorsBoxParent {
-    padding: 0 10vh;
+    padding: 0 6vh 0 10vh;
 }
 
 #contributorsText{
@@ -66,6 +74,12 @@
 }
 
 @media (max-width: 768px) {
+
+.footerBase{
+    padding-bottom: 0;
+    padding-top: 10px;
+}
+
   .contributorsBoxParent {
     flex-direction: column;
     align-items: center;

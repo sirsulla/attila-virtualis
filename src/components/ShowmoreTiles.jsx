@@ -30,12 +30,13 @@ export default function Showmore({ text, charLimit = 300, sentenceLimit = null }
         paragraph 
         sx={{ 
           width: '100%', 
-          textAlign: 'justify', 
+          textAlign: 'center', 
           mb: 0, 
           whiteSpace: 'pre-wrap',
           display: 'flex',
           flexWrap: 'wrap',
-          gap: 0.5
+          gap: 0.5,
+          fontSize: {xs: '80%', md: '100%'},
         }}
       >
         {displayText}
@@ -45,7 +46,7 @@ export default function Showmore({ text, charLimit = 300, sentenceLimit = null }
             onClick={handleToggle}
             sx={{
               cursor: 'pointer',
-              ml: '800px',
+              ml: 'auto',
               fontSize: '2rem',
               transition: 'transform 0.3s ease',
               transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
