@@ -96,7 +96,14 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
     <Container className="section-tiles tiles-description" sx={{ pt: { xs: 7, md: 6.5 }, pb: { xs: 0.5, md: 0 }}}>
         <h2 class="tileH2Title">{tilesHeader.title}</h2>
         <p></p>
-        <Showmore text={tilesHeader.text} sentenceLimit={tilesHeader.numberofsentences}/>
+
+  <span class='buy-ticket'>Váltsa meg <a href="https://jegy.mnm.hu/programok/reszlet/attila-_1768552366"  style={{ color: 'rgb(204, 143, 0)', textDecoration: 'none' }}>jegyét</a> még ma az elmúlt 40 év legjelentősebb <a href="https://mnm.hu/kiallitasok/attila" style={{ color: 'rgb(204, 143, 0)', textDecoration: 'none' }}>Attila</a>  kiállítására!</span>
+  <Showmore 
+    sx={{ display: 'inline-block' }} 
+    text={tilesHeader.text} 
+    sentenceLimit={tilesHeader.numberofsentences} 
+  />
+
       </Container>
 
       <Container className='tiles-theme' sx={{ py: 0, minHeight: {xs: 80, md: 10}}}> {/*700 , 650 */} 
@@ -119,7 +126,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
               overflow: 'hidden',*/
                   height: {
                 xs: 440,  
-                md: 670,     
+                md: 681, //670     
               },
               overflow: {
                 xs: 'visible',
