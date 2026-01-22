@@ -16,7 +16,7 @@ import { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { tilesPageData } from '../data/tilespagedata';
-import Showmore from '../components/Showmore';
+import Showmore from '../components/ShowmoreTiles';
 
 import sl1 from '../images/slimages/sl1_Torzitottkoponya.jpg';
 import sl2 from '../images/slimages/sl2_Becsiszablyamasol-0.jpg';
@@ -35,12 +35,12 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
   const tilesHeader = tilesPageData;
 
   const items = [
-    { id: 1, title: 'Attila világa – a Hun Birodalom és környezete', body: ' ', image: sl1 }, //  Attila világa – a Hun Birodalom és környezete
-    { id: 2, title: 'A hadisten kardja: a legenda és a tárgyak', body: ' ', image: sl2 }, //  A hadisten kardja: a legenda és a tárgyak
-    { id: 3, title: 'A hun király nyugati percepciója: Attila, az Isten ostora', body: ' ', image: sl3 }, //  A hun király nyugati percepciója: Attila, az Isten ostora
-    { id: 4, title: 'Attila lakomája', body: ' ', image: sl4 }, //  Attila lakomája
-    { id: 5, title: 'Attila halála', body: ' ', image: sl5 }, //  Attila halála
-    { id: 6, title: 'Attila mint a magyarok (h)őse', body: ' ', image: sl6 }, //  Attila mint a magyarok (h)őse
+    { id: 1, title: 'ATTILA KORA – A RÉGÉSZETI ÉS TÖRTÉNETI VALÓSÁG', body: ' ', image: sl1 }, //  Attila világa – a Hun Birodalom és környezete
+    { id: 2, title: 'A HADISTEN KARDJA', body: ' ', image: sl2 }, //  A hadisten kardja: a legenda és a tárgyak
+    { id: 3, title: 'ISTEN OSTORA', body: ' ', image: sl3 }, //  A hun király nyugati percepciója: Attila, az Isten ostora
+    { id: 4, title: 'ATTILA LAKOMÁJA', body: ' ', image: sl4 }, //  Attila lakomája
+    { id: 5, title: 'ATTILA HALÁLA ÉS TEMETÉSE', body: ' ', image: sl5 }, //  Attila halála
+    { id: 6, title: 'ATTILA, AZ ŐS ÉS HŐS', body: ' ', image: sl6 }, //  Attila mint a magyarok (h)őse
   ];
 
   const goToPage = (id) => {
@@ -93,20 +93,27 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
         <CloseIcon />
       </IconButton>
 
-      <Container className="section-tiles tiles-description" sx={{/*paddingTop: 5, paddingBottom: 0, textAlign: 'center'*/ pt: { xs: 7, md: 5 }, pb: { xs: 0.5, md: 0 }, textAlign: 'center', fontSize: {xs: '80%', md: '100%'}}}>
-        <h2>{tilesHeader.title}</h2>
+    <Container className="section-tiles tiles-description" sx={{ pt: { xs: 7, md: 6.5 }, pb: { xs: 0.5, md: 0 }}}>
+        <h2 class="tileH2Title">{tilesHeader.title}</h2>
         <p></p>
-        <Showmore text={tilesHeader.text} sentenceLimit={tilesHeader.numberofsentences} />
+
+  <span class='buy-ticket'>Váltsa meg <a href="https://jegy.mnm.hu/programok/reszlet/attila-_1768552366"  style={{ color: 'rgb(204, 143, 0)', textDecoration: 'none' }}>jegyét</a> még ma az elmúlt 40 év legjelentősebb <a href="https://mnm.hu/kiallitasok/attila" style={{ color: 'rgb(204, 143, 0)', textDecoration: 'none' }}>Attila</a>  kiállítására!</span>
+  <Showmore 
+    sx={{ display: 'inline-block' }} 
+    text={tilesHeader.text} 
+    sentenceLimit={tilesHeader.numberofsentences} 
+  />
+
       </Container>
 
       <Container className='tiles-theme' sx={{ py: 0, minHeight: {xs: 80, md: 10}}}> {/*700 , 650 */} 
         <Typography
-          variant="h4"
+          variant="h5"
+          fontWeight='600'
           align="center"
-          color="black"
-          gutterBottom
+          sx={{ mb: 4 }}
         >
-          Válassz témát!
+          Válasszon témát!
         </Typography>
 
           <Grid
@@ -116,10 +123,10 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
             sx={{
               //height: 550, // 600 
               /*height: 550,
-              overflow: 'hidden'*/
+              overflow: 'hidden',*/
                   height: {
-                xs: 440,  // 📱 mobil: tartalom diktál, 'auto' 450,
-                md: 440,     // 💻 desktop: harmonika 550 , 530 , 490   , '35vh'
+                xs: 440,  
+                md: 681, //670     
               },
               overflow: {
                 xs: 'visible',
@@ -136,7 +143,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
             ? 1
             : isActive
             ? 15
-            : 0.1;
+            : 0.7;
           
             return (
               <Box
@@ -200,10 +207,10 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
                   >
                     <Typography
                       variant="h6"
-                      sx={(theme) => ({
+                      sx={() => ({ // theme
                         fontSize: isActive
-                          ? { xs: "1.0rem", md: theme.typography.h4.fontSize }
-                          : { xs: "0.8rem", md: theme.typography.h6.fontSize },
+                          ? { xs: "1.0rem", md: "1.5rem" } // theme.typography.h4.fontSize
+                          : { xs: "0.8rem", md: "1.1rem" }, // theme.typography.h6.fontSize
                         transition:
                           "font-size 0.5s ease, line-height 0.5s ease",
                       })}

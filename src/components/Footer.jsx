@@ -26,7 +26,7 @@ export default function Footer() {
             </div>
             
             <div class = 'imageBox'>
-                <img src={Logo} class='logo' alt="logo" /> 
+                <img src={Logo} class='logo' alt="logo" />
             </div>
 
         </div>

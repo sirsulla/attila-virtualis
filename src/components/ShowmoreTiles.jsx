@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function Showmore({ text, charLimit = 300, sentenceLimit = null }) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [shouldScroll, setShouldScroll] = useState(false);
+  const containerRef = useRef(null);
 
   const getSentenceLimitedText = (fullText, limit) => {
     const sentences = fullText.match(/[^.!?]+[.!?]+/g) || [fullText];
@@ -20,22 +22,40 @@ export default function Showmore({ text, charLimit = 300, sentenceLimit = null }
   const displayText = isExpanded ? text : truncatedText;
 
   const handleToggle = () => {
+    if (isExpanded) {
+      // Összezáráskor beállítjuk a scroll flag-et
+      setShouldScroll(true);
+    }
     setIsExpanded(!isExpanded);
   };
 
+  useEffect(() => {
+    // Csak összezáráskor scrollozunk
+    if (shouldScroll && !isExpanded && containerRef.current) {
+      containerRef.current.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start'
+      });
+      // Use setTimeout to defer setState and avoid cascading renders
+      const timer = setTimeout(() => setShouldScroll(false), 0);
+      return () => clearTimeout(timer);
+    }
+  }, [isExpanded, shouldScroll]);
+
   return (
-    <Box>
+    <Box ref={containerRef}>
       <Typography 
         variant="body1" 
         paragraph 
         sx={{ 
           width: '100%', 
-          textAlign: 'justify', 
+          textAlign: 'center', 
           mb: 0, 
           whiteSpace: 'pre-wrap',
           display: 'flex',
           flexWrap: 'wrap',
-          gap: 0.5
+          gap: 0.5,
+          fontSize: {xs: '80%', md: '100%'},
         }}
       >
         {displayText}
@@ -45,7 +65,7 @@ export default function Showmore({ text, charLimit = 300, sentenceLimit = null }
             onClick={handleToggle}
             sx={{
               cursor: 'pointer',
-              ml: '800px',
+              ml: 'auto',
               fontSize: '2rem',
               transition: 'transform 0.3s ease',
               transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
