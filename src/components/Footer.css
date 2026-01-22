@@ -1,0 +1,176 @@
+.footerBase {
+  background-color: rgb(207, 207, 207);
+  width: 100%;
+  padding: 25px 0 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.contributorsBoxParent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: min(1300px, 100%);
+  padding: 0 5vh;
+}
+
+.contributorsBox {
+  flex: 1;
+}
+
+#contributorsText{
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#contributorsNames{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 0 !important;
+}
+
+.contributorsNamesLastRow{
+    display: inline-flex; 
+    line-height: 18px;
+}
+
+.imageBox {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo {
+  width: 65%;
+  max-width: 320px;
+  height: auto;
+}
+
+@media (max-width: 1600px) {
+    .contributorsBoxParent {
+        width: min(1200px, 100%);
+        padding: 0 0.5vh 0 5vh;
+    }
+}
+
+@media (max-width: 1024px) {
+
+.contributorsBoxParent {
+    padding: 0 6vh 0 10vh;
+}
+
+#contributorsText{
+    font-size: 13px;
+}
+
+#contributorsNames{
+    font-size: 13px;
+}
+
+}
+
+@media (max-width: 768px) {
+
+.footerBase{
+    padding-bottom: 0;
+    padding-top: 10px;
+}
+
+  .contributorsBoxParent {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 5vh;
+    /*font-size: 75%;
+    text-align: center;*/
+  }
+
+  .contributorsBox {
+    width: 100%;
+  }
+
+#contributorsText{
+    font-size: 12px;
+}
+
+#contributorsNames{
+    font-size: 12px;
+}
+
+  .imageBox {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    margin-top: -30px;
+    width: 90%;
+    max-width: 260px;
+  }
+}
+
+/*
+.footerBase{
+    height: 30vh;
+    background-color: rgb(207, 207, 207);
+    width: 100vw;
+    padding: 30px 0 20px 0;
+    display: flex;
+    vertical-align: middle; 
+    justify-content: center;
+}
+
+.contributorsBoxParent{
+    padding: 0 150px 0 150px;
+    padding: 0 5vh 0 5vh;
+    display: inline-flex;
+    vertical-align: middle; 
+    height: 100%;
+    width: min(1300px, 100%);
+
+}
+
+.contributorsBox{ 
+    width: 50%;
+}
+
+#contributorsText{
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#contributorsNames{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+#contributorsNames2{
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.contributorsNamesLastRow{
+    display: inline-flex; 
+    line-height: 18px;
+}
+
+.imageBox{
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center; 
+}
+
+.logo{
+    width: 65%;
+    height: auto;
+}

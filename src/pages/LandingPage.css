@@ -1,0 +1,74 @@
+/*
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}*/
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-home {
+  height: 100vh;
+  width: min(100vw);
+  background-image: url('../images/landing-page/hatter.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-image {
+  cursor: pointer;
+
+  width: min(75vw);
+  height: auto;
+
+  transition: transform 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+
+.start-image {
+  cursor: pointer;
+  width: 100%;
+  height: 60vh;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+}
+
+@media (max-width: 375px) {
+
+.start-image {
+  cursor: pointer;
+  max-width: 100%;
+  height: 45vh;
+}
+
+}
+
+/*
+.start-image {
+  /*max-width: 100%;*/  
+/*  width: 100%;
+  cursor: pointer;
+/* width: 100%;h
+   height: 100vh; 
+   background-size: cover;    
+   background-position: center;  
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}*/

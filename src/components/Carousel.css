@@ -1,0 +1,36 @@
+/* Basic carousel layout */
+.carousel{
+	display:flex;
+	align-items:center;
+	gap:8px;
+}
+.carousel__viewport{
+	overflow:hidden;
+	flex:1 1 auto;
+}
+.carousel__track{
+	display:flex;
+	transition:transform 0.3s ease;
+}
+.carousel__slide{
+	display:block;
+	box-sizing:border-box; 
+	padding:8px;
+	text-decoration:none;
+	color:inherit;
+	overflow:hidden;
+}
+
+.carousel__slide img {
+	width:100%;
+	height:400px;
+	object-fit:cover;
+	display:block;
+}
+.carousel__nav{
+	background:transparent;
+	border:none;
+	font-size:24px;
+	cursor:pointer;
+}
+
