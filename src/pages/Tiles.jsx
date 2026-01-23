@@ -56,15 +56,8 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
       fullScreen
       maxWidth={false}
       PaperProps={{
-        sx: {/*
-          height: '100%',
-          backgroundColor: 'rgba(255, 255, 255, 0.65)',
-          //backgroundColor: 'rgba(0,0,0,0.7)',
-          color: 'rgba(0, 0, 0, 1)',
-          //color: 'rgba(255, 255, 255, 1)',
-          backdropFilter: 'blur(6px)'*/
+        sx: {
               height: '100%',
-              //backgroundColor: 'rgba(255, 255, 255, 0.65)',
               backgroundColor: 'rgb(255, 255, 255)',
               backdropFilter: 'blur(6px)',
               overflowY: {
@@ -74,16 +67,10 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
         }
       }}
     >
-      {/* Close button */}
       <IconButton
         onClick={onClose}
         //size="large"
-        sx={{/*
-          position: 'absolute',
-          top: 8,
-          right: 28,
-          color: 'black',
-          zIndex: 10 */
+        sx={{
         position: 'fixed', // 👈 FONTOS
         top: { xs: 8, md: 16 },
         right: { xs: 12, md: 28 },
@@ -106,7 +93,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
       </Container>
 
-      <Container className='tiles-theme' sx={{ py: 0, minHeight: {xs: 80, md: 10}}}> {/*700 , 650 */} 
+      <Container className='tiles-theme' sx={{ py: 0, minHeight: {xs: 80, md: 10}}}>  
         <Typography
           variant="h5"
           fontWeight='600'
@@ -122,9 +109,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
             direction="column"
             sx={{
               //height: 550, // 600 
-              /*height: 550,
-              overflow: 'hidden',*/
-                  height: {
+              height: {
                 xs: 440,  
                 md: 681, //670     
               },
@@ -172,7 +157,6 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
                     borderRadius: 0,
                   }}
                 >
-                  {/* Background image */}
                   <Box
                     sx={{
                       position: "absolute",
@@ -217,27 +201,6 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
                     >
                       {it.title}
                     </Typography>
-
-                    {/*isActive && (
-                      <Typography variant="body1" sx={{ mt: 2 }}>
-                        {it.body}
-                      </Typography>
-
-                      sx={(theme) => 
-                        ({ 
-                        fontSize: isActive ? theme.typography.h4.fontSize : theme.typography.h6.fontSize, 
-                        lineHeight: isActive ? theme.typography.h4.lineHeight : theme.typography.h6.lineHeight, 
-                        transition: 'font-size 0.5s ease, line-height 0.5s ease' 
-                        })
-                      
-             const flexGrow =
-              activeTile === null
-                ? 1
-                : isActive
-                ? 15   // aktív helyet kap
-                : 0.2; // inaktív összenyomódik
-                        
-                    )*/}
                   </CardContent>
                 </Card>
               </Box>

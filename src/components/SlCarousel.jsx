@@ -85,7 +85,6 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
                 }}
               />
             </button>
-              {/* Descending overlay - persists per slide */}
               {overlays[idx] && (
                 <div
                 key={`${idx}-${animationKey}`} // Force remount to replay animation
