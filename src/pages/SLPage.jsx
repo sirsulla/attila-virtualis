@@ -92,7 +92,7 @@ export default function CardPage() {
           width: '100%',
           mx: { xs: 2, sm: 0 }
         }}>
-          <SlCarousel images={slpage.carousimages} captions={slpage.caroustexts} carouselTexts={slpage.caroustexts}/>
+          <SlCarousel images={slpage.carousimages} captions={slpage.caroustexts} carouselTexts={slpage.caroustexts} carouselIds={slpage.carouselIds} />
         </Box>
         
       </Container>
