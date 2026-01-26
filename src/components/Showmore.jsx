@@ -35,7 +35,8 @@ export default function Showmore({ text, charLimit = 300, sentenceLimit = null }
           whiteSpace: 'pre-wrap',
           display: 'flex',
           flexWrap: 'wrap',
-          gap: 0.5
+          gap: 0.5,
+          fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' }
         }}
       >
         {displayText}
@@ -45,8 +46,8 @@ export default function Showmore({ text, charLimit = 300, sentenceLimit = null }
             onClick={handleToggle}
             sx={{
               cursor: 'pointer',
-              ml: '800px',
-              fontSize: '2.5rem',
+              ml: { xs: '250px', sm: '430px', md: '780px' },
+              fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
               transition: 'transform 0.3s ease',
               transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
               '&:hover': {

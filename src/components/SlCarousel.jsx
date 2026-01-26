@@ -29,7 +29,14 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
   };
 
   return (
-    <div style={{ backgroundColor: '#000000', width: '100%', height: '350px', overflow: 'hidden', position: 'relative' }}>
+    <div style={{ 
+      backgroundColor: '#ffffff', 
+      width: '100%', 
+      height: 'clamp(200px, 50vw, 400px)', 
+      overflow: 'hidden', 
+      position: 'relative',
+      maxHeight: '400px'
+    }}>
       <div style={{ position: 'absolute', top: 8, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 5 }}>
         {images.map((_, i) => (
           <button
@@ -85,7 +92,6 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
                 }}
               />
             </button>
-              {/* Descending overlay - persists per slide */}
               {overlays[idx] && (
                 <div
                 key={`${idx}-${animationKey}`} // Force remount to replay animation
@@ -99,14 +105,14 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
                     animation: 'descendOverlay 0.6s ease-out forwards',
                     pointerEvents: 'none',
                     display: 'flex',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                  justifyContent: 'center',
-                  padding: '12px 16px',
-                  boxSizing: 'border-box',
-                  color: '#fff',
-                  fontSize: 32,
-                  lineHeight: 1.4,
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    justifyContent: 'center',
+                    padding: 'clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px)',
+                    boxSizing: 'border-box',
+                    color: '#fff',
+                    fontSize: 'clamp(16px, 4vw, 32px)',
+                    lineHeight: 1.4,
                   }}
                   >
                     {captions[idx] ?? ''}
