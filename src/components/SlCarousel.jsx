@@ -24,6 +24,18 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
   const handleImageClick = (itemIndex) => {
     if (carouselTexts && carouselTexts[itemIndex]) {
       const itemTitle = carouselTexts[itemIndex];
+      // Scroll to top immediately with multiple methods
+      const scrollToTop = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        document.documentElement.scroll({ top: 0, left: 0, behavior: 'instant' });
+        document.body.scroll({ top: 0, left: 0, behavior: 'instant' });
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      };
+      
+      scrollToTop();
+      // Use requestAnimationFrame to ensure scroll happens before navigation
+      requestAnimationFrame(scrollToTop);
       navigate(`/carousel/${itemTitle}`);
     }
   };
@@ -74,7 +86,7 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
                 width: '100%',
                 border: 'none',
                 background: 'none',
-                cursor: pageId ? 'pointer' : 'default',
+                cursor: 'pointer',
                 padding: 0,
                 margin: 0,
               }}
@@ -89,6 +101,7 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
                   objectFit: 'cover',
                   display: 'block',
                   transition: pageId ? 'transform 0.3s ease' : 'none',
+                  cursor: 'pointer'
                 }}
               />
             </button>
@@ -102,7 +115,7 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
                     width: '100%',
                     height: '140px',
                     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                    animation: 'descendOverlay 0.6s ease-out forwards',
+                    animation: 'descendOverlay 0.8s cubic-bezier(0.25, 0.46, 0.15, 1) forwards',
                     pointerEvents: 'none',
                     display: 'flex',
                     alignItems: 'center',

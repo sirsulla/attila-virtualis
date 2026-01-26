@@ -1,5 +1,5 @@
 import { useParams, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Container, Typography, Box } from "@mui/material";
 import { slPagesData } from "../data/slpagesdata";
 import SlCarousel from '../components/SlCarousel';
@@ -10,22 +10,25 @@ import Footer from '../components/Footer';
 export default function CardPage() {
   const { id } = useParams();
   const location = useLocation();
+  const pageRef = useRef(null);
   const slpage = slPagesData.find(c => c.id === parseInt(id));
-  
+
   useEffect(() => {
-    // Add small delay to ensure page is rendered before scrolling
-    const timer = setTimeout(() => {
-      window.scrollTo(0, 0);
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }, 0);
-    return () => clearTimeout(timer);
-  }, [location]);
+    // Scroll to top immediately
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [id]);
   
    if (!slpage) return <Typography>Card not found</Typography>;
 
   return (
-    <Box sx={{ 
+    <Box 
+      ref={pageRef}
+      sx={{ 
       backgroundColor: '#ffffff', 
       minHeight: '100vh', 
       width: '100%', 
@@ -79,7 +82,7 @@ export default function CardPage() {
             mx: { xs: 2, sm: 0 }
           }}
         >
-          Még néhány érdekesség:
+          Válasszon témát!
         </Typography>
 
         <Box sx={{ 
