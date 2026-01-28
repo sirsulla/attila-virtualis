@@ -69,7 +69,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
     >
 
       <Container 
-        className='teszt'
+        className='tiles-main'
         sx={{
           marginLeft: 0,
           marginRight: 0,
