@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="contributorsBox">
           <p id="contributorsText">Közreműködők</p>
           <p id="contributorsNames">
-                Projektvezető: Varga Benedek
+                Projektvezető és főkurátor: Varga Benedek
                 <br/>
                 <span class = 'contributorsNamesLastRow'>
                 Kurátorok: Szenthe Gergely, Serfőző Szabolcs, Szerdahelyi Orsolya, Sóti Lajos, Bicskei Éva
