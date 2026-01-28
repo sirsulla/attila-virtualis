@@ -1,3 +1,8 @@
+.tiles-main {
+  max-width: 100% !important; /* 1600px !important */
+  padding-bottom: 16px !important;
+}
+
 .section-tiles {
   /*height: 100vh;*/
   display: flex !important;
@@ -28,7 +33,7 @@
 .tiles-cards {
   cursor: pointer;
   height: 60vh;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .css-1umw9bq-MuiSvgIcon-root {
@@ -67,11 +72,16 @@
 
 
 .tiles-cards{
-  height: 61vh !important;
-  padding-bottom: 40px !important;
+  height: 60vh !important;
 }
 
 @media (max-width: 425px) {
+
+.tiles-main {
+  padding-bottom: 0 !important;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
 
   .tiles-cards{
   height: 60vh !important;
@@ -91,3 +101,8 @@
 
 
 }
+/*
+@media (max-width: 1300px) {
+
+}
+*/
