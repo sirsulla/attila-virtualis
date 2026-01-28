@@ -1,7 +1,7 @@
 .footerBase {
   background-color: rgb(207, 207, 207);
   width: 100%;
-  padding: 30px 0 20px;
+  padding: 25px 0 25px;
   display: flex;
   justify-content: center;
 }
@@ -29,6 +29,7 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
+    margin-bottom: 0 !important;
 }
 
 .contributorsNamesLastRow{
@@ -49,10 +50,17 @@
   height: auto;
 }
 
+@media (max-width: 1600px) {
+    .contributorsBoxParent {
+        width: min(1200px, 100%);
+        padding: 0 0.5vh 0 5vh;
+    }
+}
+
 @media (max-width: 1024px) {
 
 .contributorsBoxParent {
-    padding: 0 10vh;
+    padding: 0 6vh 0 10vh;
 }
 
 #contributorsText{
@@ -66,6 +74,12 @@
 }
 
 @media (max-width: 768px) {
+
+.footerBase{
+    padding-bottom: 0;
+    padding-top: 10px;
+}
+
   .contributorsBoxParent {
     flex-direction: column;
     align-items: center;
@@ -98,65 +112,4 @@
     width: 90%;
     max-width: 260px;
   }
-}
-
-/*
-.footerBase{
-    height: 30vh;
-    background-color: rgb(207, 207, 207);
-    width: 100vw;
-    padding: 30px 0 20px 0;
-    display: flex;
-    vertical-align: middle; 
-    justify-content: center;
-}
-
-.contributorsBoxParent{
-    padding: 0 150px 0 150px;
-    padding: 0 5vh 0 5vh;
-    display: inline-flex;
-    vertical-align: middle; 
-    height: 100%;
-    width: min(1300px, 100%);
-
-}
-
-.contributorsBox{ 
-    width: 50%;
-}
-
-#contributorsText{
-    font-family: sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-#contributorsNames{
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 24px;
-}
-
-#contributorsNames2{
-    font-size: 13px;
-    font-weight: 400;
-}
-
-.contributorsNamesLastRow{
-    display: inline-flex; 
-    line-height: 18px;
-}
-
-.imageBox{
-    text-align: center;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    justify-content: right;
-    align-items: center; 
-}
-
-.logo{
-    width: 65%;
-    height: auto;
 }

@@ -12,10 +12,12 @@ export default function Footer() {
                 Projektvezető: Varga Benedek
                 <br/>
                 <span class = 'contributorsNamesLastRow'>
-                Kurátorok: Marczel Krisztina, Serfőző Szabolcs, Szenthe Gergő, Sóti Lajos, Szerdahelyi Orsolya
+                Kurátorok: Szenthe Gergely, Serfőző Szabolcs, Szerdahelyi Orsolya, Sóti Lajos, Bicskei Éva
                 </span>
                 <br/>
-                Projektmenedzser: Novák Orsolya
+                Kurátorasszisztens: Marczel Krisztina
+                <br/>
+                Projektmenedzser: Novák Orsolya, Varga Lujza
                 <br/>
                  Grafikai arculat: Balás Benedek
                 <br/>
@@ -26,7 +28,7 @@ export default function Footer() {
             </div>
             
             <div class = 'imageBox'>
-                <img src={Logo} class='logo' alt="logo" /> 
+                <img src={Logo} class='logo' alt="logo" />
             </div>
 
         </div>
