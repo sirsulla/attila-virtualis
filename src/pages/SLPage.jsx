@@ -25,25 +25,70 @@ export default function CardPage() {
    if (!slpage) return <Typography>Card not found</Typography>;
 
   return (
-    <Box sx={{ backgroundColor: '#ffffff', minHeight: '100vh', width: '100vw', m: 0, p: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-      <Container sx={{ width: 'min(900px, 100%)', mx: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', color: '#000000', py: 5 }}>
+    <Box sx={{ 
+      backgroundColor: '#ffffff', 
+      minHeight: '100vh', 
+      width: '100%', 
+      m: 0, 
+      p: 0, 
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      overflowX: 'hidden'
+    }}>
+      <Container sx={{ 
+        width: { xs: '95%', sm: '90%', md: 'min(900px, 95%)', lg: 'min(900px, 90%)' },
+        mx: 'auto', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        textAlign: 'center', 
+        color: '#000000', 
+        py: { xs: 2, sm: 3, md: 5 },
+        px: { xs: 1, sm: 2 }
+      }}>
 
         <Leftbutton to="/#section-tiles" />
 
-        <Typography variant="h5" sx={{ mb: 4 }}>
+        <Typography 
+          variant="h5" 
+          sx={{ 
+            mb: { xs: 2, sm: 3, md: 4 },
+            fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
+            wordBreak: 'break-word',
+            mx: { xs: 2, sm: 0 }
+          }}
+        >
           {slpage.title}
         </Typography>
 
-        <Box sx={{ mb: 2 }}>
+        <Box sx={{ 
+          mb: { xs: 1.5, sm: 2, md: 2 },
+          width: '100%',
+          mx: { xs: 2, sm: 0 }
+        }}>
           <Showmore text={slpage.text} sentenceLimit={slpage.numberofsentences} />
         </Box>
 
-        <Typography variant="h6" sx={{ mb: 5 }}>
+        <Typography 
+          variant="h6" 
+          sx={{ 
+            mb: { xs: 2.5, sm: 3.5, md: 5 },
+            fontSize: { xs: '1rem', sm: '1.15rem', md: '1.25rem' },
+            mx: { xs: 2, sm: 0 }
+          }}
+        >
           Még néhány érdekesség:
-
         </Typography>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#ffffff' }}>
+        <Box sx={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          backgroundColor: '#ffffff',
+          width: '100%',
+          mx: { xs: 2, sm: 0 }
+        }}>
           <SlCarousel images={slpage.carousimages} captions={slpage.caroustexts} carouselTexts={slpage.caroustexts}/>
         </Box>
         
