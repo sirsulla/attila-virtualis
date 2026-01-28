@@ -50,7 +50,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
 
-    <Dialog 
+    <Dialog
       open={open}
       onClose={onClose}
       fullScreen
@@ -67,6 +67,15 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
         }
       }}
     >
+
+      <Container 
+        className='teszt'
+        sx={{
+          marginLeft: 0,
+          marginRight: 0,
+        }}
+       >
+
       <IconButton
         onClick={onClose}
         //size="large"
@@ -111,7 +120,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
               //height: 550, // 600 
               height: {
                 xs: 440,  
-                md: 681, //670     
+                md: 640, //670 , 681    
               },
               overflow: {
                 xs: 'visible',
@@ -207,6 +216,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
             );
           })}
         </Grid>
+      </Container>
       </Container>
     </Dialog>
   );
