@@ -93,7 +93,7 @@ const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
         <h2 class="tileH2Title">{tilesHeader.title}</h2>
         <p></p>
 
-  <span class='buy-ticket'>Váltsa meg <a href="https://jegy.mnm.hu/programok/reszlet/attila-_1768552366"  style={{ color: 'rgb(204, 143, 0)', textDecoration: 'none' }}>jegyét</a> még ma az elmúlt 40 év legjelentősebb <a href="https://mnm.hu/kiallitasok/attila" style={{ color: 'rgb(204, 143, 0)', textDecoration: 'none' }}>Attila</a>  kiállítására!</span>
+  <span class='buy-ticket'><a href="https://jegy.mnm.hu/programok/reszlet/attila-_1768552366"  style={{ color: 'rgb(204, 143, 0)', textDecoration: 'none' }}>Váltsa meg a jegyét</a> még ma az elmúlt 40 év legjelentősebb <a href="https://mnm.hu/kiallitasok/attila" style={{ color: 'rgb(204, 143, 0)', textDecoration: 'none' }}>Attila kiállítására</a>!</span>
   <Showmore 
     sx={{ display: 'inline-block' }} 
     text={tilesHeader.text} 
