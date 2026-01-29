@@ -31,18 +31,19 @@ export default function Leftbutton({ to }) {
     <Button
       onClick={handleClick}
       sx={{
-        mb: 3,
-        ml: -2,
+        mb: { xs: 2, sm: 2.5, md: 3 },
+        ml: { xs: -1, sm: -1.5, md: -2 },
         alignSelf: 'flex-start',
         '&:hover': { backgroundColor: 'rgba(255, 255, 255, 0.1)' },
         display: 'flex',
         alignItems: 'center',
         color: '#000000',
-        gap: 0.5,
-        fontFamily: 'Montserrat'
+        gap: { xs: 0.3, sm: 0.4, md: 0.5 },
+        fontFamily: 'Montserrat',
+        fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' }
       }}
     >
-      <img src={arrowIcon} alt="back" style={{ width: '60px' }} />
+      <img src={arrowIcon} alt="back" style={{ width: 'clamp(30px, 8vw, 60px)', height: 'auto' }} />
       Vissza
     </Button>
   );

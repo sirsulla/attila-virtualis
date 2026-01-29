@@ -1,5 +1,5 @@
 import { useParams, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Container, Typography, Box } from "@mui/material";
 
 import { tlPagesData } from "../data/tlpagesdata";
@@ -9,16 +9,17 @@ import Footer from '../components/Footer';
 export default function TLPage() {
   const { pageId } = useParams();
   const location = useLocation();
+  const pageRef = useRef(null);
 
   useEffect(() => {
-    // Add small delay to ensure page is rendered before scrolling
-    const timer = setTimeout(() => {
-      window.scrollTo(0, 0);
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }, 0);
-    return () => clearTimeout(timer);
-  }, [location]);
+    // Scroll to top immediately
+    if (pageRef.current) {
+      pageRef.current.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [pageId]);
 
   // Find content from tlpagesData based on title (pageId now contains the title)
   const contentData = tlPagesData.find(item => item.title === pageId);
@@ -33,7 +34,9 @@ export default function TLPage() {
   const image = contentData.image;
 
   return (
-    <Box sx={{ 
+    <Box 
+      ref={pageRef}
+      sx={{ 
       backgroundColor: '#ffffff', 
       minHeight: '100vh', 
       width: '100%', 
