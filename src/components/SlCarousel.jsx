@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { useNavigate } from 'react-router-dom';
 
-export default function SlCarousel({ images = [], captions = [], pageId = null, carouselTexts = [] }) {
+export default function SlCarousel({ images = [], captions = [], pageId = null, carouselTexts = [], carouselIds = [] }) {
   const [index, setIndex] = useState(0);
   const [overlays, setOverlays] = useState({});
   const [animationKey, setAnimationKey] = useState(0);
@@ -22,8 +22,8 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
   }, [index]);
 
   const handleImageClick = (itemIndex) => {
-    if (carouselTexts && carouselTexts[itemIndex]) {
-      const itemTitle = carouselTexts[itemIndex];
+    if (carouselIds && carouselIds[itemIndex]) {
+      const itemId = carouselIds[itemIndex];
       // Scroll to top immediately with multiple methods
       const scrollToTop = () => {
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -36,7 +36,7 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
       scrollToTop();
       // Use requestAnimationFrame to ensure scroll happens before navigation
       requestAnimationFrame(scrollToTop);
-      navigate(`/carousel/${itemTitle}`);
+      navigate(`/carousel/${itemId}`);
     }
   };
 
@@ -126,6 +126,7 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
                     color: '#fff',
                     fontSize: 'clamp(16px, 4vw, 32px)',
                     lineHeight: 1.4,
+                    whiteSpace: 'pre-line',
                   }}
                   >
                     {captions[idx] ?? ''}

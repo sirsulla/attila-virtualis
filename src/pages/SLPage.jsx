@@ -82,7 +82,7 @@ export default function CardPage() {
             mx: { xs: 2, sm: 0 }
           }}
         >
-          Válasszon témát!
+          Fedezze fel válogatásunkat a kiállítás anyagából!
         </Typography>
 
         <Box sx={{ 
