@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { useNavigate } from 'react-router-dom';
 
-export default function SlCarousel({ images = [], captions = [], pageId = null, carouselTexts = [] }) {
+export default function SlCarousel({ images = [], captions = [], pageId = null, carouselTexts = [], carouselIds = [] }) {
   const [index, setIndex] = useState(0);
   const [overlays, setOverlays] = useState({});
   const [animationKey, setAnimationKey] = useState(0);
@@ -22,14 +22,33 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
   }, [index]);
 
   const handleImageClick = (itemIndex) => {
-    if (carouselTexts && carouselTexts[itemIndex]) {
-      const itemTitle = carouselTexts[itemIndex];
-      navigate(`/carousel/${itemTitle}`);
+    if (carouselIds && carouselIds[itemIndex]) {
+      const itemId = carouselIds[itemIndex];
+      // Scroll to top immediately with multiple methods
+      const scrollToTop = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        document.documentElement.scroll({ top: 0, left: 0, behavior: 'instant' });
+        document.body.scroll({ top: 0, left: 0, behavior: 'instant' });
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      };
+      
+      scrollToTop();
+      // Use requestAnimationFrame to ensure scroll happens before navigation
+      requestAnimationFrame(scrollToTop);
+      navigate(`/carousel/${itemId}`);
     }
   };
 
   return (
-    <div style={{ backgroundColor: '#000000', width: '100%', height: '350px', overflow: 'hidden', position: 'relative' }}>
+    <div style={{ 
+      backgroundColor: '#ffffff', 
+      width: '100%', 
+      height: 'clamp(200px, 50vw, 400px)', 
+      overflow: 'hidden', 
+      position: 'relative',
+      maxHeight: '400px'
+    }}>
       <div style={{ position: 'absolute', top: 8, left: 0, right: 0, display: 'flex', justifyContent: 'center', zIndex: 5 }}>
         {images.map((_, i) => (
           <button
@@ -67,7 +86,7 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
                 width: '100%',
                 border: 'none',
                 background: 'none',
-                cursor: pageId ? 'pointer' : 'default',
+                cursor: 'pointer',
                 padding: 0,
                 margin: 0,
               }}
@@ -82,6 +101,7 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
                   objectFit: 'cover',
                   display: 'block',
                   transition: pageId ? 'transform 0.3s ease' : 'none',
+                  cursor: 'pointer'
                 }}
               />
             </button>
@@ -95,17 +115,18 @@ export default function SlCarousel({ images = [], captions = [], pageId = null, 
                     width: '100%',
                     height: '140px',
                     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                    animation: 'descendOverlay 0.6s ease-out forwards',
+                    animation: 'descendOverlay 0.8s cubic-bezier(0.25, 0.46, 0.15, 1) forwards',
                     pointerEvents: 'none',
                     display: 'flex',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                  justifyContent: 'center',
-                  padding: '12px 16px',
-                  boxSizing: 'border-box',
-                  color: '#fff',
-                  fontSize: 32,
-                  lineHeight: 1.4,
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    justifyContent: 'center',
+                    padding: 'clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px)',
+                    boxSizing: 'border-box',
+                    color: '#fff',
+                    fontSize: 'clamp(16px, 4vw, 32px)',
+                    lineHeight: 1.4,
+                    whiteSpace: 'pre-line',
                   }}
                   >
                     {captions[idx] ?? ''}
