@@ -21,8 +21,8 @@ export default function TLPage() {
     document.body.scrollTop = 0;
   }, [pageId]);
 
-  // Find content from tlpagesData based on title (pageId now contains the title)
-  const contentData = tlPagesData.find(item => item.title === pageId);
+  // Find content from tlpagesData based on id
+  const contentData = tlPagesData.find(item => item.id === parseInt(pageId, 10));
   
   if (!contentData) return (
     <Box sx={{ backgroundColor:  '#ffffff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -47,11 +47,12 @@ export default function TLPage() {
       overflowX: 'hidden'
     }}>
       <Container sx={{ 
-        width: { xs: '95%', sm: '90%', md: 'min(900px, 95%)', lg: 'min(900px, 90%)' }, 
+        width: { xs: '100%', sm: '90%', md: 'min(900px, 95%)', lg: 'min(900px, 90%)' }, 
         mx: 'auto', 
         color: '#000000', 
         py: { xs: 2, sm: 3, md: 5 },
-        px: { xs: 1, sm: 2 },
+        px: { xs: 2, sm: 2 },
+        boxSizing: 'border-box',
         backgroundColor: '#ffffff' 
       }}>
         <Leftbutton />
@@ -61,8 +62,7 @@ export default function TLPage() {
           sx={{ 
             mb: { xs: 2, sm: 3, md: 4 }, 
             textAlign: 'center',
-            fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2.125rem' },
-            mx: { xs: 2, sm: 0 }
+            fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2.125rem' }
           }}
         >
           {title}
@@ -71,8 +71,7 @@ export default function TLPage() {
         <Box sx={{ 
           display: 'flex', 
           justifyContent: 'center', 
-          mb: { xs: 3, sm: 4, md: 5 },
-          mx: { xs: 2, sm: 0 }
+          mb: { xs: 3, sm: 4, md: 5 }
         }}>
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
             <img
@@ -99,7 +98,7 @@ export default function TLPage() {
                   fontSize: { xs: '0.75rem', sm: '0.8rem', md: '0.85rem' },
                   whiteSpace: 'pre-wrap',
                   lineHeight: 1.5,
-                  px: { xs: 1, sm: 0 }
+                  px: { xs: 0, sm: 0 }
                 }}
                 dangerouslySetInnerHTML={{ __html: contentData.caption }}
               />
@@ -116,8 +115,7 @@ export default function TLPage() {
             mb: 2,
             whiteSpace: 'pre-wrap',
             lineHeight: 1.8,
-            fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
-            mx: { xs: 2, sm: 0 }
+            fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' }
           }}
         >
           {contentData ? contentData.content : 'Content not available'}
